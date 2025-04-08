@@ -10,7 +10,7 @@ const App = () => {
   const [forecastData, setForecastData] = useState(null);
   const [error, setError] = useState('');
 
-  const apiKey = 'fa02f18000a14d3bcd9ebe96fa4eaa99'; // Your API Key here
+  const apiKey = 'fa02f18000a14d3bcd9ebe96fa4eaa99'; 
 
   useEffect(() => {
     fetchWeatherData(city);
@@ -92,6 +92,8 @@ const App = () => {
             <div key={index} className="forecast-day">
               <h3>{formatDate(dayForecast.forecasts[Object.keys(dayForecast.forecasts)[0]].dt)}</h3>
               <div className="forecast-cards">
+
+                
                 {/* Sort the time of day to be: Morning -> Midday -> Evening */}
                 {['Morning', 'Midday', 'Evening'].map((timeOfDay, idx) => (
                   dayForecast.forecasts[timeOfDay] ? (
